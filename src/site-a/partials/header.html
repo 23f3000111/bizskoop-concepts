@@ -1,0 +1,43 @@
+<div class="topbar">
+  <div class="wrap topbar__in">
+    <ul class="topbar__info">
+      <li><a href="tel:+601124244993"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>+60 11-2424 4993</a></li>
+      <li><a href="mailto:hello@bizskoop.com"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>hello@bizskoop.com</a></li>
+      <li><span><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg>Mon to Fri, 9:00 to 18:00</span></li>
+    </ul>
+    <div class="topbar__end">
+      <a class="topbar__rating" href="https://maps.app.goo.gl/ai9FfwHGYCDCHwsL9" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-google"/></svg><strong>5.0</strong><span class="topbar__stars" aria-hidden="true"><svg class="ic ic--star"><use href="#i-star-fill"/></svg><svg class="ic ic--star"><use href="#i-star-fill"/></svg><svg class="ic ic--star"><use href="#i-star-fill"/></svg><svg class="ic ic--star"><use href="#i-star-fill"/></svg><svg class="ic ic--star"><use href="#i-star-fill"/></svg></span><span>90+ Google reviews</span></a>
+      {{@socials topbar}}
+    </div>
+  </div>
+</div>
+<header class="site-header" data-header>
+  <div class="wrap site-header__in">
+    <a class="brand" href="index.html" aria-label="Bizskoop home"><img src="assets/img/logo.png" alt="Bizskoop" width="1536" height="243"></a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav__list">
+        <li><a class="nav__link" data-nav="index" href="index.html">Home</a></li>
+        <li class="nav__dd" data-dropdown>
+          <button type="button" class="nav__link" data-nav="services" aria-expanded="false" aria-controls="menu-services">Services<svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></button>
+          <div class="mega" id="menu-services">
+            <div class="mega__grid">{{@servicesMenu}}</div>
+            <div class="mega__side">
+              <p class="mega__kicker">Not sure where to start?</p>
+              <p class="mega__text">Tell us about your plans and we map out every registration, licence and pass you need.</p>
+              <button type="button" class="btn btn--primary btn--sm" data-open="consult">Book a free consultation</button>
+              <a class="mega__all" href="services.html">See all services<svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            </div>
+          </div>
+        </li>
+        <li><a class="nav__link" data-nav="about" href="about.html">About</a></li>
+        <li><a class="nav__link" data-nav="faq" href="faq.html">FAQ</a></li>
+        <li><a class="nav__link" data-nav="contact" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="menu-btn" data-menu-toggle aria-expanded="false" aria-label="Menu"><svg class="ic" aria-hidden="true"><use href="#i-menu"/></svg></button>
+    <div class="site-header__cta">
+      <a class="icon-btn" href="https://wa.me/601124244993?text=Hi%20Bizskoop%2C%20I%E2%80%99m%20interested%20in%20your%20consultation%20services." target="_blank" rel="noopener" aria-label="WhatsApp Bizskoop"><svg class="ic" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+      <button type="button" class="btn btn--primary" data-open="consult" data-magnetic>Book a free consultation<span class="btn__tile"><svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></button>
+    </div>
+  </div>
+</header>

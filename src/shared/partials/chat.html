@@ -1,0 +1,29 @@
+<div class="bz-chat" data-chat>
+  <section class="bz-chat__panel" id="bz-chat-panel" data-chat-panel role="dialog" aria-label="Ask Bizskoop" hidden>
+    <header class="bz-chat__head">
+      <span class="bz-chat__avatar" aria-hidden="true"><img src="assets/img/favicon.png" alt=""></span>
+      <div class="bz-chat__who">
+        <h2 class="bz-chat__title">Ask Bizskoop</h2>
+        <p class="bz-chat__status"><span class="bz-chat__live" aria-hidden="true"></span>Instant answers from our FAQ</p>
+      </div>
+      <button type="button" class="bz-chat__close" data-chat-close aria-label="Close the chat"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button>
+    </header>
+    <div class="bz-chat__log" data-chat-log data-lenis-prevent role="log" aria-live="polite"></div>
+    <div class="bz-chat__chips" data-chat-chips></div>
+    <form class="bz-chat__form" data-chat-form>
+      <label class="sr-only" for="bz-chat-q">Your question</label>
+      <input id="bz-chat-q" name="q" autocomplete="off" maxlength="300" placeholder="Ask about company setup, passes, licences">
+      <button type="submit" aria-label="Send"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg></button>
+    </form>
+    <p class="bz-chat__note">Automated answers. For advice on your case, message a consultant.</p>
+  </section>
+  <div class="bz-chat__teaser" data-chat-teaser hidden>
+    <p>Setting up in Malaysia? Ask me about companies, passes or licences.</p>
+    <button type="button" data-chat-close aria-label="Dismiss"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button>
+  </div>
+  <button type="button" class="bz-chat__launcher" data-chat-launcher aria-expanded="false" aria-controls="bz-chat-panel">
+    <svg class="ic ic--open" aria-hidden="true"><use href="#i-chat"/></svg>
+    <svg class="ic ic--shut" aria-hidden="true"><use href="#i-x"/></svg>
+    <span class="bz-chat__label">Ask Bizskoop</span>
+  </button>
+</div>

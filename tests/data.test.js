@@ -98,3 +98,9 @@ test('every photo has its face boxes for face-safe crops', () => {
   assert.ok(names.length >= 40, 'photo library is in place');
   names.forEach((n) => assert.ok(Array.isArray(faces[n]), `faces entry for ${n}`));
 });
+
+test('chat chips have labels and the consultation form knows every service', () => {
+  data.chat.intents.forEach((i) => assert.ok(i.label, `label for ${i.id}`));
+  assert.equal(data.consultOptions.at(-1), 'Not sure, I need advice');
+  data.services.forEach((s) => assert.ok(data.consultOptions[data.consultFor[s.id]], `consult option for ${s.id}`));
+});

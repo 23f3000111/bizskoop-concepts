@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parent.parent
 UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36'
 FAMILIES = {
     'site-a-clear-path': ['Geist:wght@300..800', 'Geist+Mono:wght@400..600'],
-    'site-b-gateway': ['Plus+Jakarta+Sans:ital,wght@0,300..800;1,400..600'],
+    'site-b-gateway': ['Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600', 'Plus+Jakarta+Sans:ital,wght@0,300..800;1,400..600'],
 }
 KEEP = {'latin', 'latin-ext'}
 

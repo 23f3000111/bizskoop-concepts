@@ -15,7 +15,7 @@
 - Folders: `site-a-clear-path/`, `site-b-gateway/`, root `index.html` chooser; generated pages are never edited by hand (edit `src/`, run `node tools/pages.js`).
 - Colours: navy `#091932`, logo blue `#4A7CBF`, white, ice `#F4F7FB`, mist `#E6EEF8`, sky `#D3E2F4`. No dark sections, panels, menus or footer.
 - Logo: `Logo.png` as is (copied to `assets/img/logo.png` in each site); never redrawn.
-- Type: A = Geist + Geist Mono; B = Plus Jakarta Sans; self-hosted woff2 (latin, latin-ext).
+- Type: A = Geist + Geist Mono (all sans-serif); B = Newsreader headings + Plus Jakarta Sans text (user direction: one site sans-serif); self-hosted woff2 (latin, latin-ext).
 - Visible copy: no U+2014 or U+2013; no invented facts; reviews show initials, never stock faces.
 - Works from `file://`: no `type="module"`, no `fetch(` of local files; only the map iframe and outbound links use the internet.
 - Every page: `<meta name="robots" content="noindex, nofollow">`, exactly one `<h1>`, footer note "Concept design for Bizskoop Sdn. Bhd. Not the live website."

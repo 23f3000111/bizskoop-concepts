@@ -91,7 +91,7 @@ Inner pages share the language: Services (all seven with full lists and the stac
 
 ## Concept B, "Gateway" (modelled on growfast.framer.website)
 
-Calm, premium corporate. Big rounded photos (24 to 28 px radius), soft ice panels, pill tabs and buttons with an arrow circle, bento grids. Type: Plus Jakarta Sans.
+Calm, premium corporate. Big rounded photos (24 to 28 px radius), soft ice panels, pill tabs and buttons with an arrow circle, bento grids. Type: Newsreader (serif, headings) with Plus Jakarta Sans (text and interface). User direction on 21 October, mid-build: "use sans serif font for one site", so Concept A stays all sans-serif and Concept B carries the serif.
 
 Home, top to bottom:
 1. Rounded full-height photo hero with figures along the top (1,000+ businesses incorporated, 15+ years, 5.0 Google rating), a three-part headline ("Register your company. Secure your passes. Grow in Malaysia."), a short line and a consultation button; a glass pill header floats over it and turns solid on scroll.

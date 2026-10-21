@@ -1,0 +1,68 @@
+<!--{"title": "Services | Bizskoop", "description": "Company secretarial, business licensing, corporate advisory, Employment Passes, Employer of Record, accounting and tax, and buying or selling a business in Malaysia.", "bodyClass": "page-services", "nav": "services"}-->
+<section class="page-hero">
+  <div class="wrap page-hero__grid">
+    <div>
+      {{@crumbs Services}}
+      <p class="label"><span class="dot" aria-hidden="true"></span>Everything under one roof</p>
+      <h1 class="h1 h1--page" data-split>Business services for Malaysia, handled by one team</h1>
+      <p class="lead">Company setup, licensing, immigration and compliance, so you can focus on growing your business. Pick a service, or tell us your plans and we map out what you need.</p>
+      <div class="btns">
+        <button type="button" class="btn btn--primary" data-open="consult" data-magnetic>Map out what I need<span class="btn__tile">{{@arrowIcon}}</span></button>
+        <button type="button" class="btn btn--ghost lift" data-ask="What services do you offer?">{{@askIcon}}Ask the assistant</button>
+      </div>
+    </div>
+    <ul class="journey" data-reveal-group>
+      <li><a href="company-secretarial.html"><span class="journey__icon">{{@iconOf building}}</span><div><h2>Sdn Bhd setup with SSM</h2><p>Name search to certificate, typically 2 working days after complete documents.</p></div></a></li>
+      <li><a href="business-licensing.html"><span class="journey__icon">{{@iconOf badge}}</span><div><h2>Licences and approvals</h2><p>MIDA, MITI, MOTAC, CIDB, KPDN and your local council.</p></div></a></li>
+      <li><a href="immigration-employment-pass.html"><span class="journey__icon">{{@iconOf passport}}</span><div><h2>ESD, MDEC and passes</h2><p>Unlock foreign hiring and incentives, then EP, DP and talent passes.</p></div></a></li>
+      <li><a href="accounting-tax.html"><span class="journey__icon">{{@iconOf calculator}}</span><div><h2>Ongoing compliance</h2><p>Accounting, tax, payroll and renewals, with one point of contact.</p></div></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--ice section--stack" id="all">
+  <div class="wrap">
+    <div class="head head--split">
+      <div><p class="label"><span class="dot" aria-hidden="true"></span>Seven services</p><h2 class="h2" data-split>Choose where to start</h2></div>
+      <p class="lead">Each service page lists exactly what is included, how it works, the authorities involved and what our clients say.</p>
+    </div>
+    {{@serviceStack}}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="notsure" data-reveal>
+      <div>
+        <p class="label"><span class="dot" aria-hidden="true"></span>Free consultation</p>
+        <h2 class="h2">Not sure which service you need?</h2>
+        <p class="lead">Tell us about your business and we will map out the exact registrations, licences and passes you need, with clear timelines and no obligation.</p>
+      </div>
+      <div class="notsure__actions">
+        <button type="button" class="btn btn--primary btn--lg" data-open="consult" data-magnetic>Book a free consultation<span class="btn__tile">{{@arrowIcon}}</span></button>
+        <a class="btn btn--ghost btn--lg lift" href="tel:+601124244993">{{@iconOf phone}}Call +60 11-2424 4993</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--ice">
+  <div class="wrap">
+    <div class="head head--split">
+      <div><p class="label"><span class="dot" aria-hidden="true"></span>Industries</p><h2 class="h2" data-split>What usually applies in your industry</h2></div>
+      <p class="lead">Tap an industry to see the services and approvals our clients in that sector need most.</p>
+    </div>
+    {{@industries}}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="authorities authorities--flush">
+      <div class="authorities__head"><h2 class="h2">The authorities we navigate</h2><p>Relationships with every regulator that matters. Tap a logo for details.</p></div>
+      {{@authorityGrid}}
+    </div>
+  </div>
+</section>
+
+{{@closingCta team-suits}}

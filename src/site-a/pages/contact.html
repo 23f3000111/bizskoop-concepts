@@ -1,0 +1,50 @@
+<!--{"title": "Contact | Bizskoop", "description": "Call or WhatsApp +60 11-2424 4993, e-mail hello@bizskoop.com or visit Bizskoop at Menara Centara, Jalan Tuanku Abdul Rahman, Kuala Lumpur.", "bodyClass": "page-contact", "nav": "contact"}-->
+<section class="page-hero page-hero--compact">
+  <div class="wrap">
+    {{@crumbs Contact}}
+    <div class="page-hero__row">
+      <div>
+        <p class="label"><span class="dot" aria-hidden="true"></span>Contact</p>
+        <h1 class="h1 h1--page" data-split>How can we help?</h1>
+      </div>
+      <p class="lead">Message us on WhatsApp, call, e-mail or visit the office in Kuala Lumpur. The first consultation is free and confidential.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight-top">
+  <div class="wrap">{{@contactCards}}</div>
+</section>
+
+<section class="section section--ice">
+  <div class="wrap visit">
+    <div class="visit__info" data-reveal>
+      <p class="label"><span class="dot" aria-hidden="true"></span>Visit the office</p>
+      <h2 class="h2">Menara Centara, Kuala Lumpur</h2>
+      <address class="visit__address">13-05, Menara Centara<br>G-01, Jalan Tuanku Abdul Rahman<br>Chow Kit, 50100 Kuala Lumpur<br>Wilayah Persekutuan Kuala Lumpur</address>
+      <dl class="visit__hours"><div><dt>Monday to Friday</dt><dd>9:00 to 18:00</dd></div><div><dt>Saturday and Sunday</dt><dd>Closed, WhatsApp us</dd></div></dl>
+      <div class="btns">
+        <a class="btn btn--primary" href="https://maps.app.goo.gl/ai9FfwHGYCDCHwsL9" target="_blank" rel="noopener">Get directions<span class="btn__tile">{{@iconOf pin}}</span></a>
+        <button type="button" class="btn btn--ghost lift" data-open="consult">Book a visit</button>
+      </div>
+      <div class="visit__social"><p>Follow Bizskoop</p>{{@socials contact}}</div>
+    </div>
+    {{@mapEmbed}}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="notsure" data-reveal>
+      <div>
+        <p class="label"><span class="dot" aria-hidden="true"></span>Free consultation</p>
+        <h2 class="h2">Tell us about your business</h2>
+        <p class="lead">We map out the registrations, licences and passes you need, with clear timelines. It takes two minutes.</p>
+      </div>
+      <div class="notsure__actions">
+        <button type="button" class="btn btn--primary btn--lg" data-open="consult" data-magnetic>Book a free consultation<span class="btn__tile">{{@arrowIcon}}</span></button>
+        <button type="button" class="btn btn--ghost btn--lg lift" data-ask="Where is your office?">{{@askIcon}}Ask the assistant</button>
+      </div>
+    </div>
+  </div>
+</section>

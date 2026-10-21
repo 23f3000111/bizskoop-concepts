@@ -164,6 +164,8 @@ def icons():
         svg = (SRC / 'icons' / 'brands' / f'{name}.svg').read_text(encoding='utf-8')
         path = re.search(r'<path d="([^"]+)"', svg).group(1)
         symbols.append(f'<symbol id="i-{name}" viewBox="0 0 24 24"><path fill="currentColor" d="{path}"/></symbol>')
+    star = re.search(r'<path d="([^"]+)"', (SRC / 'icons' / 'lucide' / 'star.svg').read_text(encoding='utf-8')).group(1)
+    symbols.append(f'<symbol id="i-star-fill" viewBox="0 0 24 24"><path fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linejoin="round" d="{star}"/></symbol>')
     symbols.append(GOOGLE_G)
     dest = ROOT / 'src' / 'shared' / 'partials' / 'icons.html'
     dest.parent.mkdir(parents=True, exist_ok=True)

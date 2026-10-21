@@ -95,4 +95,6 @@ function build(key) {
 }
 
 module.exports = { SITES, esc, parsePage, render, outputs, renderFile, build };
-if (require.main === module) for (const k of Object.keys(SITES)) console.log(build(k).join('\n'));
+if (require.main === module) {
+  for (const k of Object.keys(SITES)) if (fs.existsSync(path.join(ROOT, 'src', k, 'layout.html'))) console.log(build(k).join('\n'));
+}

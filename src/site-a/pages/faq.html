@@ -1,0 +1,35 @@
+<!--{"title": "Questions and answers | Bizskoop", "description": "Answers about company registration, Employment Passes, business licences, accounting and fees in Malaysia, from Bizskoop's consultants.", "bodyClass": "page-faq", "nav": "faq"}-->
+<section class="page-hero page-hero--compact">
+  <div class="wrap">
+    {{@crumbs Questions and answers}}
+    <div class="page-hero__row">
+      <div>
+        <p class="label"><span class="dot" aria-hidden="true"></span>Questions and answers</p>
+        <h1 class="h1 h1--page" data-split>Answers before anything is filed</h1>
+      </div>
+      <p class="lead">Search the questions our clients ask most, or ask the assistant. For your own case, a consultant replies on WhatsApp.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight-top">
+  <div class="wrap faq-layout">
+    {{@faqFull}}
+    <aside class="faq-aside">
+      <div class="faq-aside__card">
+        <span class="faq-aside__icon">{{@iconOf chat}}</span>
+        <h2 class="h3">Ask the assistant</h2>
+        <p>Instant answers on company setup, passes, licences and fees, day or night.</p>
+        <button type="button" class="btn btn--primary btn--block" data-ask="I have a question">Start a chat<span class="btn__tile">{{@arrowIcon}}</span></button>
+      </div>
+      <div class="faq-aside__card faq-aside__card--soft">
+        <span class="faq-aside__icon">{{@iconOf whatsapp}}</span>
+        <h2 class="h3">Talk to a consultant</h2>
+        <p>Monday to Friday, 9:00 to 18:00. Free, confidential and non-binding.</p>
+        <button type="button" class="btn btn--ghost btn--block lift" data-open="consult">Book a free consultation</button>
+      </div>
+    </aside>
+  </div>
+</section>
+
+{{@closingCta consult-laptop}}

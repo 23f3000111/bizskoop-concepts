@@ -1,0 +1,73 @@
+<div class="bz-modal" id="consult-modal" role="dialog" aria-modal="true" aria-labelledby="consult-title" hidden>
+  <div class="bz-modal__scrim" data-close></div>
+  <div class="bz-modal__panel bz-modal__panel--wide" data-lenis-prevent>
+    <button type="button" class="bz-modal__close" data-close aria-label="Close"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button>
+    <div class="consult">
+      <aside class="consult__side">
+        <p class="consult__kicker">Free consultation</p>
+        <h2 class="consult__title" id="consult-title">Tell us about your business</h2>
+        <p class="consult__lead">A consultant maps out the registrations, licences and passes you need, with clear timelines. Confidential and non-binding.</p>
+        <ul class="consult__points">
+          <li><svg class="ic" aria-hidden="true"><use href="#i-circle-check"/></svg>No consultation fee, no hidden costs</li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-circle-check"/></svg>One dedicated account manager</li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-circle-check"/></svg>Replies Monday to Friday, 9:00 to 18:00</li>
+        </ul>
+        <p class="consult__rating"><svg class="ic ic--google" aria-hidden="true"><use href="#i-google"/></svg><span><strong>5.0</strong> from 90+ Google reviews</span></p>
+      </aside>
+      <form class="consult__form" novalidate>
+        <div class="field">
+          <label for="c-name">Name</label>
+          <input id="c-name" name="name" autocomplete="name" placeholder="Your full name" autofocus>
+          <p class="field__error" data-error="name" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="c-email">E-mail</label>
+          <input id="c-email" name="email" type="email" autocomplete="email" placeholder="you@company.com">
+          <p class="field__error" data-error="email" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="c-phone">Phone or WhatsApp</label>
+          <div class="field__row">
+            <select name="code" aria-label="Country code">
+              <option value="+60">+60 Malaysia</option><option value="+65">+65 Singapore</option><option value="+62">+62 Indonesia</option>
+              <option value="+91">+91 India</option><option value="+92">+92 Pakistan</option><option value="+880">+880 Bangladesh</option>
+              <option value="+86">+86 China</option><option value="+971">+971 UAE</option><option value="+966">+966 Saudi Arabia</option>
+              <option value="+20">+20 Egypt</option><option value="+7">+7 Kazakhstan</option><option value="+44">+44 United Kingdom</option>
+              <option value="+1">+1 US and Canada</option><option value="+61">+61 Australia</option><option value="">Other</option>
+            </select>
+            <input id="c-phone" name="phone" type="tel" autocomplete="tel-national" placeholder="12 345 6789">
+          </div>
+          <p class="field__error" data-error="phone" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="c-service">What do you need help with?</label>
+          <select id="c-service" name="service"></select>
+        </div>
+        <div class="field">
+          <label for="c-message">Anything we should know? <span class="field__opt">Optional</span></label>
+          <textarea id="c-message" name="message" rows="3" placeholder="For example: two shareholders from Singapore, opening a café in Kuala Lumpur"></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--block"><svg class="ic" aria-hidden="true"><use href="#i-whatsapp"/></svg>Send on WhatsApp</button>
+        <p class="consult__fine">Your details go into a WhatsApp message to Bizskoop that you send yourself. Nothing is stored on this site.</p>
+      </form>
+      <div class="consult__done" data-consult-done hidden>
+        <span class="consult__done-icon"><svg class="ic" aria-hidden="true"><use href="#i-circle-check"/></svg></span>
+        <h3>Thanks, <span data-consult-name></span>. Your message is ready.</h3>
+        <p>WhatsApp opened in a new tab with your details filled in. Press send there and a consultant will reply within working hours.</p>
+        <div class="consult__done-actions">
+          <a class="btn btn--primary" data-wa href="#" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-whatsapp"/></svg>Open WhatsApp again</a>
+          <a class="btn btn--ghost" data-mail href="#"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>Send by e-mail instead</a>
+        </div>
+        <button type="button" class="consult__back" data-close>Back to the site</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bz-modal" id="info-modal" role="dialog" aria-modal="true" aria-labelledby="info-title" hidden>
+  <div class="bz-modal__scrim" data-close></div>
+  <div class="bz-modal__panel" data-lenis-prevent>
+    <button type="button" class="bz-modal__close" data-close aria-label="Close"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button>
+    <div data-info-body></div>
+  </div>
+</div>
