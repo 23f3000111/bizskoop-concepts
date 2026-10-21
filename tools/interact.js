@@ -26,6 +26,32 @@ const url = (f) => pathToFileURL(path.join(ROOT, DIR, f)).href;
   await page.addStyleTag({ content: '.marquee__track { animation: none !important; }' });
   await page.waitForTimeout(800);
 
+  await check('moving rows: chips and logos in the second copy are clickable too', async () => {
+    // slide every marquee by half, so the visible items are the duplicated copy
+    await page.evaluate(() => document.querySelectorAll('.marquee.is-running .marquee__track').forEach((t) => { t.style.animation = 'none'; t.style.transform = 'translateX(-50%)'; }));
+    const chip = page.locator('.qwall .marquee__group[aria-hidden="true"] [data-ask]').first();
+    const logo = page.locator('.logostrip .marquee__group[aria-hidden="true"] [data-authority]').first();
+    if (await chip.count()) {
+      await chip.scrollIntoViewIfNeeded();
+      await chip.click({ timeout: 5000 });
+      await page.waitForFunction(() => document.querySelectorAll('.bz-msg--bot:not(.bz-msg--typing)').length >= 2, null, { timeout: 5000 });
+      await page.click('[data-chat-launcher]');
+    }
+    if (await logo.count()) {
+      await logo.scrollIntoViewIfNeeded();
+      await logo.click({ timeout: 5000 });
+      await page.waitForSelector('#info-modal.is-open', { timeout: 5000 });
+      await page.keyboard.press('Escape');
+      await page.waitForTimeout(350);
+    }
+    expect((await chip.count()) + (await logo.count()) > 0, 'a moving row exists on this home page');
+    await page.evaluate(() => document.querySelectorAll('.marquee__track').forEach((t) => { t.style.animation = ''; t.style.transform = ''; }));
+    await page.evaluate(() => { try { sessionStorage.clear(); } catch (e) {} });
+    await page.reload({ waitUntil: 'load' });
+    await page.evaluate(() => { window.__opened = []; window.open = (u) => { window.__opened.push(u); return null; }; });
+    await page.addStyleTag({ content: '.marquee__track { animation: none !important; }' });
+    await page.waitForTimeout(600);
+  });
   await check('consult: empty form shows three errors', async () => {
     await page.locator('[data-header] [data-open="consult"]').last().click();
     await page.waitForSelector('#consult-modal.is-open');

@@ -514,9 +514,11 @@
       const group = $('.marquee__group', m);
       if (!group) return;
       if (reduced) { m.classList.add('is-static'); return; }
+      // The copy keeps the loop seamless. It stays clickable (half the visible items are copies at any moment)
+      // but is hidden from screen readers and skipped by the Tab key, so nothing is announced or focused twice.
       const copy = group.cloneNode(true);
       copy.setAttribute('aria-hidden', 'true');
-      copy.setAttribute('inert', '');
+      copy.querySelectorAll('a, button').forEach((el) => { el.tabIndex = -1; });
       group.parentNode.appendChild(copy);
       m.classList.add('is-running');
     });
