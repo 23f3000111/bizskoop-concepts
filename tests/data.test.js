@@ -91,12 +91,14 @@ test('every image the content uses exists in both sites', () => {
   }
 });
 
-test('every photo has its face boxes for face-safe crops', () => {
+test('every photo each site ships has its face boxes for face-safe crops', () => {
   const faces = require('../shared/js/faces.js');
-  const dir = path.join(ROOT, SITES[0], 'assets', 'img', 'photos');
-  const names = fs.readdirSync(dir).filter((f) => f.endsWith('.webp')).map((f) => f.slice(0, -5));
-  assert.ok(names.length >= 40, 'photo library is in place');
-  names.forEach((n) => assert.ok(Array.isArray(faces[n]), `faces entry for ${n}`));
+  for (const site of SITES) {
+    const dir = path.join(ROOT, site, 'assets', 'img', 'photos');
+    const names = fs.readdirSync(dir).filter((f) => f.endsWith('.webp')).map((f) => f.slice(0, -5));
+    assert.ok(names.length >= 15, `${site} has its photos`);
+    names.forEach((n) => assert.ok(Array.isArray(faces[n]), `${site}: faces entry for ${n}`));
+  }
 });
 
 test('chat chips have labels and the consultation form knows every service', () => {
