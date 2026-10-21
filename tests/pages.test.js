@@ -19,7 +19,7 @@ test('render fills partials, meta, nav state, scripts and directives', () => {
     site: 'site-a',
   });
   assert.equal(html, '<title>A &amp; B</title><a data-nav="home">H</a><a data-nav="faq" aria-current="page">F</a>'
-    + '<main><p>hi world site-a</p></main><script defer src="assets/js/x.js"></script>');
+    + '<main><p>hi world site-a</p></main><script defer src="assets/js/x.js?v=2"></script>');
 });
 
 test('render resolves item fields in meta and body, escaped', () => {

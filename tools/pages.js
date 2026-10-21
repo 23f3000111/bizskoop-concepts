@@ -31,7 +31,7 @@ function render({ layout, partials, page, file, fns, data, item = null, site }) 
       return partials[p];
     });
   }
-  const scripts = (meta.scripts || []).map((s) => `<script defer src="assets/js/${s}.js"></script>`).join('\n');
+  const scripts = (meta.scripts || []).map((s) => `<script defer src="assets/js/${s}.js?v=2"></script>`).join('\n');
   html = html.replace('{{scripts}}', () => scripts);
   html = html.replace(/\{\{(\w+)\}\}/g, (_, k) => esc(meta[k]));
   html = html.replace(/\{\{item\.([\w.]+)\}\}/g, (_, k) => esc(pick(item, k)));
