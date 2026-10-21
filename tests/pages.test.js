@@ -70,3 +70,63 @@ test('shared scripts and styles are in sync in both sites', () => {
     }
   }
 });
+
+// ---------------- built pages ----------------
+const data = require('../shared/js/data.js');
+const SITE_DIRS = Object.values(pages.SITES);
+const builtPages = (dir) => fs.readdirSync(path.join(ROOT, dir)).filter((f) => f.endsWith('.html'));
+const visibleText = (html) => html.replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<style[\s\S]*?<\/style>/g, ' ')
+  .replace(/<!--[\s\S]*?-->/g, ' ').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ');
+
+test('both sites have every page, including one per service', () => {
+  for (const dir of SITE_DIRS) {
+    const files = builtPages(dir);
+    for (const f of ['index.html', 'services.html', 'about.html', 'faq.html', 'contact.html', ...data.services.map((s) => s.slug + '.html')]) {
+      assert.ok(files.includes(f), `${dir}/${f}`);
+    }
+  }
+});
+
+test('every built page has one h1, noindex and no module scripts', () => {
+  for (const dir of SITE_DIRS) {
+    for (const f of builtPages(dir)) {
+      const html = fs.readFileSync(path.join(ROOT, dir, f), 'utf8');
+      assert.equal((html.match(/<h1[\s>]/g) || []).length, 1, `${dir}/${f} has one h1`);
+      assert.ok(html.includes('<meta name="robots" content="noindex, nofollow">'), `${dir}/${f} noindex`);
+      assert.ok(!/type="module"/.test(html), `${dir}/${f} no ES modules`);
+      assert.ok(!/\{\{|\}\}/.test(html), `${dir}/${f} no template leftovers`);
+    }
+  }
+});
+
+test('every local link and asset in the built pages resolves', () => {
+  for (const dir of SITE_DIRS) {
+    for (const f of builtPages(dir)) {
+      const html = fs.readFileSync(path.join(ROOT, dir, f), 'utf8');
+      for (const [, ref] of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
+        if (/^(https?:|mailto:|tel:|#|data:|javascript:)/.test(ref)) continue;
+        const file = ref.split(/[?#]/)[0];
+        assert.ok(fs.existsSync(path.join(ROOT, dir, file)), `${dir}/${f} -> ${ref}`);
+      }
+    }
+  }
+});
+
+test('no em or en dashes in any visible copy', () => {
+  for (const dir of SITE_DIRS) {
+    for (const f of builtPages(dir)) {
+      const text = visibleText(fs.readFileSync(path.join(ROOT, dir, f), 'utf8'));
+      const m = text.match(/.{0,30}[–—].{0,30}/);
+      assert.ok(!m, `${dir}/${f}: ${m && m[0]}`);
+    }
+  }
+});
+
+test('our own scripts never fetch local files', () => {
+  for (const dir of SITE_DIRS) {
+    const js = path.join(ROOT, dir, 'assets', 'js');
+    for (const f of fs.readdirSync(js).filter((n) => n.endsWith('.js'))) {
+      assert.ok(!/\bfetch\(|^\s*import\s|^\s*export\s/m.test(fs.readFileSync(path.join(js, f), 'utf8')), `${dir}/assets/js/${f}`);
+    }
+  }
+});

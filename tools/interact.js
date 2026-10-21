@@ -22,6 +22,8 @@ const url = (f) => pathToFileURL(path.join(ROOT, DIR, f)).href;
 
   await page.goto(url('index.html'), { waitUntil: 'load' });
   await page.evaluate(() => { window.__opened = []; window.open = (u) => { window.__opened.push(u); return null; }; });
+  // marquees never stop moving, which Playwright reads as an unstable target; a visitor's hover pauses them
+  await page.addStyleTag({ content: '.marquee__track { animation: none !important; }' });
   await page.waitForTimeout(800);
 
   await check('consult: empty form shows three errors', async () => {

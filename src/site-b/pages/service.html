@@ -1,0 +1,78 @@
+<!--{"title": "{{item.name}} in Malaysia | Bizskoop", "description": "{{item.summary}}", "bodyClass": "page-service", "nav": "services", "each": "services", "file": "{slug}.html"}-->
+<section class="page-hero page-hero--service">
+  <div class="wrap">
+    {{@crumbs}}
+    {{@svcHeroB}}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="split-head"><div><p class="kicker"><span class="dot" aria-hidden="true"></span>Overview</p><h2 class="h2" data-split>What {{item.name}} covers</h2></div></div>
+    {{@svcOverview}}
+  </div>
+</section>
+
+<section class="section section--panel">
+  <div class="wrap">
+    <div class="split-head">
+      <div><p class="kicker"><span class="dot" aria-hidden="true"></span>What’s included</p><h2 class="h2" data-split>Everything we handle for you</h2></div>
+      <p class="lead">Take the full service or only the parts you need. Tap any item to ask the assistant about it.</p>
+    </div>
+    {{@svcIncludes}}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="split-head">
+      <div><p class="kicker"><span class="dot" aria-hidden="true"></span>How it works</p><h2 class="h2" data-split>Three stages, one point of contact</h2></div>
+      <p class="lead">You always know which stage you are in and what comes next.</p>
+    </div>
+    {{@svcStages}}
+  </div>
+</section>
+
+{{@svcExtras}}
+
+<section class="section">
+  <div class="wrap">
+    <div class="who-wrap">
+      <div class="head"><p class="kicker"><span class="dot" aria-hidden="true"></span>Who it’s for</p><h2 class="h2" data-split>Built for clients like you</h2></div>
+      {{@svcWho}}
+    </div>
+    {{@svcAuthorities}}
+  </div>
+</section>
+
+<section class="section section--panel">
+  <div class="wrap">
+    <div class="split-head">
+      <div><p class="kicker"><span class="dot" aria-hidden="true"></span>Client stories</p><h2 class="h2" data-split>Trusted by clients who are serious about Malaysia</h2></div>
+      <p class="lead">Rated 5.0 on Google from 90+ reviews.</p>
+    </div>
+    {{@svcCarousel}}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap faq-wrap">
+    <div class="faq-wrap__intro">
+      <p class="kicker"><span class="dot" aria-hidden="true"></span>Questions</p>
+      <h2 class="h2" data-split>Questions about {{item.name}}</h2>
+      <p class="lead">Still unsure? The assistant answers instantly, and a consultant can look at your case.</p>
+      <div class="btns"><button type="button" class="btn btn--primary btn--pill" data-ask="I have a question about {{item.name}}">Ask the assistant<span class="btn__tile">{{@askIcon}}</span></button></div>
+    </div>
+    {{@svcFaqs}}
+  </div>
+</section>
+
+<section class="section section--panel">
+  <div class="wrap">
+    <div class="split-head">
+      <div><p class="kicker"><span class="dot" aria-hidden="true"></span>More services</p><h2 class="h2">Everything else your business needs</h2></div>
+      <a class="link-btn" href="services.html">All services{{@arrowIcon}}</a>
+    </div>
+    {{@svcOthers}}
+  </div>
+</section>

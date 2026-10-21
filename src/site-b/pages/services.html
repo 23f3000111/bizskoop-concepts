@@ -1,0 +1,46 @@
+<!--{"title": "Services | Bizskoop", "description": "Company secretarial, business licensing, corporate advisory, Employment Passes, Employer of Record, accounting and tax, and buying or selling a business in Malaysia.", "bodyClass": "page-services", "nav": "services"}-->
+<section class="page-hero">
+  <div class="wrap">
+    {{@crumbs Services}}
+    <div class="page-hero__center">
+      <p class="kicker"><span class="dot" aria-hidden="true"></span>Everything under one roof</p>
+      <h1 class="h1 h1--page" data-split>Business services for Malaysia, handled by one team</h1>
+      <p class="lead">Company setup, licensing, immigration and compliance, so you can focus on growing your business.</p>
+      <div class="btns btns--center">
+        <button type="button" class="btn btn--primary btn--pill" data-open="consult" data-magnetic>Map out what I need<span class="btn__tile">{{@iconOf arrow-up-right}}</span></button>
+        <button type="button" class="btn btn--ghost btn--pill lift" data-ask="What services do you offer?">{{@askIcon}}Ask the assistant</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight-top">
+  <div class="wrap">{{@servicesGrid}}</div>
+</section>
+
+<section class="section section--panel">
+  <div class="wrap">
+    <div class="split-head">
+      <div><p class="kicker"><span class="dot" aria-hidden="true"></span>How we work</p><h2 class="h2" data-split>One process for every service</h2></div>
+      <p class="lead">A clear process with no surprises and transparent pricing.</p>
+    </div>
+    {{@processAccordion}}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="split-head">
+      <div><p class="kicker"><span class="dot" aria-hidden="true"></span>Industries</p><h2 class="h2" data-split>What usually applies in your industry</h2></div>
+      <p class="lead">Tap an industry to see the services and approvals our clients in that sector need most.</p>
+    </div>
+    {{@industries}}
+  </div>
+</section>
+
+<section class="section section--panel">
+  <div class="wrap">
+    <div class="center-head"><p class="kicker"><span class="dot" aria-hidden="true"></span>Government authorities</p><h2 class="h2" data-split>Relationships with every regulator that matters</h2><p class="lead">Tap a logo to see what we handle with each one.</p></div>
+    {{@authorityGrid}}
+  </div>
+</section>

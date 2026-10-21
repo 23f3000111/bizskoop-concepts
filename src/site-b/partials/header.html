@@ -1,0 +1,26 @@
+<header class="site-header" data-header>
+  <div class="site-header__bar">
+    <a class="brand" href="index.html" aria-label="Bizskoop home"><img src="assets/img/logo.png" alt="Bizskoop" width="1536" height="243"></a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav__list">
+        <li><a class="nav__link" data-nav="index" href="index.html">Home</a></li>
+        <li class="nav__dd" data-dropdown>
+          <button type="button" class="nav__link" data-nav="services" aria-expanded="false" aria-controls="menu-services">Services<svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></button>
+          <div class="mega" id="menu-services">
+            <div class="mega__grid">{{@servicesMenu}}</div>
+            <a class="mega__card" href="services.html">
+              {{@photo kl-towers-blue 50%_50%}}
+              <span class="mega__card-copy"><strong>All services</strong><small>Seven services, one team, from SSM to your Employment Pass</small></span>
+            </a>
+          </div>
+        </li>
+        <li><a class="nav__link" data-nav="about" href="about.html">About</a></li>
+        <li><a class="nav__link" data-nav="faq" href="faq.html">FAQ</a></li>
+        <li><a class="nav__link" data-nav="contact" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="header-phone" href="tel:+601124244993"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>+60 11-2424 4993</a>
+    <button type="button" class="menu-btn" data-menu-toggle aria-expanded="false" aria-label="Menu"><svg class="ic" aria-hidden="true"><use href="#i-menu"/></svg></button>
+    <button type="button" class="btn btn--primary btn--pill" data-open="consult" data-magnetic>Book a consultation<span class="btn__tile"><svg class="ic" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></span></button>
+  </div>
+</header>
