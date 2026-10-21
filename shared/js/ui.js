@@ -194,6 +194,8 @@
       e.preventDefault();
       const chatOpen = $('[data-chat].is-open');
       if (chatOpen && UI.chat) UI.chat.close(false);
+      const popup = $('#info-modal.is-open');
+      if (popup) closeModal(popup); // the form replaces a review, authority or industry pop-up
       form.reset();
       clear();
       form.hidden = false;

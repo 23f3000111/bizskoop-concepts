@@ -79,6 +79,23 @@ const url = (f) => pathToFileURL(path.join(ROOT, DIR, f)).href;
       await page.waitForTimeout(350);
     }
   });
+  await check('consultation opened from a pop-up replaces the pop-up', async () => {
+    await page.goto(url('services.html'), { waitUntil: 'load' });
+    await page.addStyleTag({ content: '.marquee__track { animation: none !important; }' });
+    await page.evaluate(() => { window.open = () => null; });
+    const el = page.locator('[data-industry="tech"]').first();
+    await el.scrollIntoViewIfNeeded();
+    await el.click();
+    await page.waitForSelector('#info-modal.is-open');
+    await page.locator('#info-modal [data-open="consult"]').click();
+    await page.waitForSelector('#consult-modal.is-open');
+    await page.waitForTimeout(400);
+    expect(await page.locator('#info-modal').isHidden(), 'the pop-up closed');
+    await page.keyboard.press('Escape');
+    await page.waitForTimeout(400);
+    expect(!(await page.locator('.bz-modal.is-open').count()), 'nothing left open');
+    await page.goto(url('index.html'), { waitUntil: 'load' });
+  });
   await check('FAQ accordion opens and closes', async () => {
     const btn = page.locator('[data-accordion] [data-acc-btn]').nth(1);
     await btn.scrollIntoViewIfNeeded();
