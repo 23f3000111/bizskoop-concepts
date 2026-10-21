@@ -1,0 +1,8 @@
+# Raw downloads from bizskoop.com, stock libraries and icon sets (the sites use processed copies)
+source-assets/
+# Tool leftovers
+.playwright-mcp/
+node_modules/
+tools/.cache/
+.superpowers/
+_previews/
