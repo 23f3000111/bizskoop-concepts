@@ -41,3 +41,21 @@ Every decision taken on the client's behalf while building both concepts, in the
 - Task 7: Ruling: the globe gently swings around Kuala Lumpur instead of spinning fully, so the hub and most arcs stay in view; arcs are capped inside the canvas; it pauses off screen and draws one still frame under reduced motion, cost if wrong: constants in globe.js.
 - Task 7: Ruling: pins sit on each country's capital or main business city (Islamabad, New Delhi, Dhaka, Beijing, Singapore, Jakarta, Dubai, Riyadh, Cairo, Astana, London, New York, Sydney), illustrative of where clients come from, not client addresses, cost if wrong: coordinates in b.js.
 - Task 7: Ruling: no stock face sits next to a reviewer's name in B's carousel or review grid; quotes carry initials only, cost if wrong: none.
+- Task 8: Ruling: unused library photos are pruned per concept (tools/prune.js) and photos named in data.js stay in both, keeps each site self-contained and lean, cost if wrong: re-run tools/assets.py photos.
+- Task 8: Ruling: the face-box test now checks the photos each site actually ships (at least 15 per site) instead of the full 57-photo library, which pruning removes on purpose, cost if wrong: none.
+- Task 9: Ruling: A's arc stage now keeps the SVG's 1000:520 ratio and shrinks with the window height, at 1366 x 630 the nodes had drifted off the curve because the SVG scaled but the node percentages did not, cost if wrong: none.
+- Task 10: Ruling: published to the public repo 23f3000111/bizskoop-concepts with Pages from main, as the user chose at the start; the work stays on main (no feature branch to finish), cost if wrong: switch off Pages or delete the repo.
+
+## Final review
+
+- Final review: self-review (no subagent: session rules and the user's standing preference)
+- Final: fixed consultation form opening on top of an open industry pop-up, interact.js "consultation opened from a pop-up replaces the pop-up" RED→GREEN, suite 29/29, interactions pass on both sites
+- Final: minor (deferred): phone layouts are usable but not polished, by the user's desktop-first rule
+- Final: minor (deferred): only seven full review texts exist (Google shows five logged out); more can be pasted into data.js
+- Final: minor (deferred): on the globe, the London and New York arcs pass partly behind the edge of the sphere
+
+## Verification
+
+- `node --test tests/`: 29 checks pass (content, helpers, every built page: one h1, noindex, every local link resolves, no dashes in visible copy, no module scripts or local fetches, the chooser).
+- `node tools/check.js`: all 24 pages clean at 1366 x 630, 1440 x 900 and 1920 x 1080, and with reduced motion; the published copy is clean too (`--base https://23f3000111.github.io/bizskoop-concepts`).
+- `node tools/interact.js a` and `b`: the consultation form, chat, pop-ups, FAQ accordion and FAQ search work on both concepts.
