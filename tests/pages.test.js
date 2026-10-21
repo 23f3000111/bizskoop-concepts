@@ -130,3 +130,13 @@ test('our own scripts never fetch local files', () => {
     }
   }
 });
+
+test('the chooser links to both concepts and every file it uses exists', () => {
+  const html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
+  assert.ok(html.includes('href="site-a-clear-path/index.html"') && html.includes('href="site-b-gateway/index.html"'), 'links to both concepts');
+  assert.ok(html.includes('<meta name="robots" content="noindex, nofollow">'), 'noindex');
+  for (const [, ref] of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
+    if (/^(https?:|mailto:|tel:|#)/.test(ref)) continue;
+    assert.ok(fs.existsSync(path.join(ROOT, ref.split(/[?#]/)[0])), `chooser -> ${ref}`);
+  }
+});

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Bizskoop | Two website concepts</title>
+<meta name="description" content="Two alternative website concepts for Bizskoop Sdn. Bhd.: Clear Path and Gateway.">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="stylesheet" href="site-a-clear-path/assets/css/fonts.css">
+<link rel="stylesheet" href="site-b-gateway/assets/css/fonts.css">
+<style>
+  :root { --navy: #091932; --blue: #4A7CBF; --blue-2: #3A67A8; --ice: #F4F7FB; --line: #DCE4EE; --ink-2: #44536B; --ink-3: #66748B;
+    --shadow-1: 0 1px 2px rgba(9, 25, 50, 0.05), 0 12px 28px -14px rgba(9, 25, 50, 0.18);
+    --shadow-2: 0 2px 6px rgba(9, 25, 50, 0.06), 0 34px 70px -28px rgba(9, 25, 50, 0.38); --ease: cubic-bezier(0.22, 1, 0.36, 1); }
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; font-family: 'Geist', system-ui, sans-serif; color: var(--ink-2); background: radial-gradient(1200px 600px at 50% -10%, rgba(74, 124, 191, 0.14), transparent 70%), #fff; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 40px; }
+  header { display: flex; align-items: center; justify-content: space-between; padding: 30px 0 0; }
+  header img { height: 26px; width: auto; display: block; }
+  header p { margin: 0; font-size: 14px; color: var(--ink-3); }
+  .intro { max-width: 760px; margin: 64px auto 48px; text-align: center; }
+  .intro span { display: inline-flex; align-items: center; gap: 10px; font-size: 14.5px; font-weight: 500; color: var(--blue-2); }
+  .intro span::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 4px rgba(74, 124, 191, 0.16); }
+  h1 { margin: 18px 0 0; font-size: clamp(40px, 4.4vw, 64px); line-height: 1.04; letter-spacing: -0.045em; font-weight: 600; color: var(--navy); }
+  .intro p { margin: 18px auto 0; max-width: 58ch; font-size: 18px; line-height: 1.6; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; padding-bottom: 40px; }
+  .card { display: flex; flex-direction: column; overflow: hidden; border-radius: 28px; background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow-1); transition: transform 0.5s var(--ease), box-shadow 0.4s, border-color 0.3s; }
+  .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-2); border-color: rgba(74, 124, 191, 0.5); }
+  .shot { margin: 14px 14px 0; overflow: hidden; border-radius: 18px; aspect-ratio: 16 / 10; background: var(--ice); box-shadow: 0 0 0 1px var(--line); }
+  .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform 1.4s var(--ease); }
+  .card:hover .shot img { transform: scale(1.04); }
+  .body { display: flex; flex-direction: column; gap: 12px; padding: 26px 30px 30px; flex: 1; }
+  .tag { font-size: 13px; font-weight: 600; color: var(--blue-2); }
+  h2 { margin: 0; font-size: 34px; line-height: 1.1; letter-spacing: -0.035em; font-weight: 600; color: var(--navy); }
+  .card--b h2 { font-family: 'Newsreader', Georgia, serif; font-weight: 400; letter-spacing: -0.02em; font-size: 38px; }
+  .body > p { margin: 0; font-size: 16px; line-height: 1.6; }
+  ul { margin: 4px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+  li { display: flex; gap: 10px; font-size: 15px; line-height: 1.45; color: var(--navy); }
+  li::before { content: ""; flex: none; width: 7px; height: 7px; margin-top: 7px; border-radius: 50%; background: var(--blue); }
+  .open { margin-top: auto; padding-top: 18px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); font-weight: 600; color: var(--navy); }
+  .open b { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: var(--navy); color: #fff; font-size: 18px; transition: transform 0.4s var(--ease), background 0.3s; }
+  .card--b .open b { border-radius: 50%; }
+  .card:hover .open b { transform: translateX(4px); background: var(--blue-2); }
+  footer { display: flex; justify-content: space-between; gap: 20px; padding: 26px 0 36px; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--ink-3); }
+  @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } .wrap { padding: 0 18px; } footer { flex-direction: column; } }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header><img src="assets/logo.png" alt="Bizskoop" width="1536" height="243"><p>October 2026</p></header>
+    <section class="intro">
+      <span>Website concepts</span>
+      <h1>Two directions for the new Bizskoop website</h1>
+      <p>Both use Bizskoop’s real services, Google reviews, regulators and contact details, with a free-consultation form and an FAQ assistant. Pick the one that feels most like Bizskoop.</p>
+    </section>
+    <main class="grid">
+      <a class="card card--a" href="site-a-clear-path/index.html">
+        <div class="shot"><img src="assets/preview-a.webp" alt="Concept A home page: a highlighted headline beside a wall of portraits"></div>
+        <div class="body">
+          <span class="tag">Concept A, all sans-serif</span>
+          <h2>Clear Path</h2>
+          <p>Editorial and structured, like a well-run consultancy. Modelled on Agevia, in Bizskoop navy and blue, set in Geist.</p>
+          <ul>
+            <li>A wall of questions clients ask, answered by the assistant on a tap</li>
+            <li>Service cards that stack as you scroll, turning from blue to full colour</li>
+            <li>A four-step process arc and a side-by-side comparison</li>
+          </ul>
+          <span class="open">Open Clear Path<b aria-hidden="true">→</b></span>
+        </div>
+      </a>
+      <a class="card card--b" href="site-b-gateway/index.html">
+        <div class="shot"><img src="assets/preview-b.webp" alt="Concept B home page: a large rounded photo with a serif headline"></div>
+        <div class="body">
+          <span class="tag">Concept B, serif headings</span>
+          <h2>Gateway</h2>
+          <p>Calm, premium and photo-led. Modelled on GrowFast, with Newsreader headings and Plus Jakarta Sans text.</p>
+          <ul>
+            <li>A turning globe with arcs from clients’ home countries into Kuala Lumpur</li>
+            <li>“Where are you in your Malaysia journey?” path cards and service tabs</li>
+            <li>A statement that fills in as you read, a bento grid and a review carousel</li>
+          </ul>
+          <span class="open">Open Gateway<b aria-hidden="true">→</b></span>
+        </div>
+      </a>
+    </main>
+    <footer><p>Concept design for Bizskoop Sdn. Bhd. Not the live website.</p><p>Photos: Unsplash. Logos: as published on bizskoop.com.</p></footer>
+  </div>
+</body>
+</html>
