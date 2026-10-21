@@ -6,7 +6,11 @@ Tuned for desktop and laptop screens (1280 to 1920 px wide), including a short 1
 
 ## Live
 
-Links are added here once the sites are published on GitHub Pages.
+- **Chooser (both concepts):** <https://23f3000111.github.io/bizskoop-concepts/>
+- **Concept A, Clear Path:** <https://23f3000111.github.io/bizskoop-concepts/site-a-clear-path/>
+- **Concept B, Gateway:** <https://23f3000111.github.io/bizskoop-concepts/site-b-gateway/>
+
+The repository is public (github.com/23f3000111/bizskoop-concepts) and every page is marked `noindex`. To update the live sites, commit and push `main`; GitHub Pages republishes in about a minute. If a plain `git push` is refused, push with `git -c credential.helper= -c credential.helper='!gh auth git-credential' push origin main`. To take the sites down, switch off Pages in the repository settings or delete the repository.
 
 ## Open it locally
 

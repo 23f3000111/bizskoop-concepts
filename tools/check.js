@@ -2,6 +2,7 @@
 // console or page errors, missing local files, broken images, sideways scrolling, revealed content left hidden.
 // usage: node tools/check.js [--sites a,b] [--pages index,about] [--sizes 1366x630,1440x900] [--reduced]
 //                            [--shots DIR] [--scroll]   (--scroll saves viewport shots while scrolling down)
+//                            [--base https://23f3000111.github.io/bizskoop-concepts]   (checks the published copy instead)
 const path = require('node:path');
 const fs = require('node:fs');
 const { pathToFileURL } = require('node:url');
@@ -16,6 +17,7 @@ const sizes = String(arg('sizes', '1366x630,1440x900,1920x1080')).split(',').map
 const reduced = !!arg('reduced', false);
 const shots = arg('shots', null);
 const scrollShots = !!arg('scroll', false);
+const base = arg('base', null);
 
 (async () => {
   const browser = await chromium.launch({ channel: 'chrome' });
@@ -31,8 +33,9 @@ const scrollShots = !!arg('scroll', false);
         const problems = [];
         page.on('console', (m) => { if (m.type() === 'error') problems.push('console: ' + m.text()); });
         page.on('pageerror', (e) => problems.push('pageerror: ' + e.message));
-        page.on('requestfailed', (r) => { if (r.url().startsWith('file:')) problems.push('missing: ' + r.url().replace(pathToFileURL(ROOT).href, '')); });
-        await page.goto(pathToFileURL(path.join(dir, file)).href, { waitUntil: 'load' });
+        page.on('requestfailed', (r) => { if (r.url().startsWith('file:') || (base && r.url().startsWith(base))) problems.push('missing: ' + r.url().replace(pathToFileURL(ROOT).href, '')); });
+        page.on('response', (r) => { if (base && r.url().startsWith(base) && r.status() >= 400) problems.push(`missing (${r.status()}): ${r.url().slice(base.length)}`); });
+        await page.goto(base ? `${base}/${DIRS[key]}/${file}` : pathToFileURL(path.join(dir, file)).href, { waitUntil: 'load' });
         await page.waitForTimeout(900);
         const name = `${key}-${file.replace('.html', '')}-${w}x${h}`;
         // scroll through like a visitor so reveals, counters and pinned scenes run
