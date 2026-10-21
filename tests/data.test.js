@@ -74,3 +74,27 @@ test('reviews, authorities, FAQs and the rest are filled in', () => {
 test('no em or en dashes anywhere in the copy', () => {
   for (const s of strings(data)) assert.ok(!/[–—]/.test(s), `dash in: ${s.slice(0, 60)}`);
 });
+
+const fs = require('node:fs');
+const path = require('node:path');
+const ROOT = path.join(__dirname, '..');
+const SITES = ['site-a-clear-path', 'site-b-gateway'];
+
+test('every image the content uses exists in both sites', () => {
+  const photos = [...data.services.map((s) => s.image), ...data.journeys.map((j) => j.image), ...data.process.map((p) => p.image)];
+  for (const site of SITES) {
+    const img = (...p) => path.join(ROOT, site, 'assets', 'img', ...p);
+    photos.forEach((p) => assert.ok(fs.existsSync(img('photos', p + '.webp')), `${site} photo ${p}`));
+    data.authorities.forEach((a) => assert.ok(fs.existsSync(img('logos', a.logo + '.webp')), `${site} logo ${a.logo}`));
+    data.countries.forEach((c) => assert.ok(fs.existsSync(img('flags', c.code + '.svg')), `${site} flag ${c.code}`));
+    ['logo.png', 'favicon.png'].forEach((f) => assert.ok(fs.existsSync(img(f)), `${site} ${f}`));
+  }
+});
+
+test('every photo has its face boxes for face-safe crops', () => {
+  const faces = require('../shared/js/faces.js');
+  const dir = path.join(ROOT, SITES[0], 'assets', 'img', 'photos');
+  const names = fs.readdirSync(dir).filter((f) => f.endsWith('.webp')).map((f) => f.slice(0, -5));
+  assert.ok(names.length >= 40, 'photo library is in place');
+  names.forEach((n) => assert.ok(Array.isArray(faces[n]), `faces entry for ${n}`));
+});

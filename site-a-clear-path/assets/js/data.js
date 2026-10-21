@@ -48,7 +48,7 @@
       name: 'Company Secretarial',
       nav: 'Company Secretarial',
       icon: 'building',
-      image: 'svc-secretarial',
+      image: 'docs-signing',
       tag: 'Company setup and governance',
       title: 'Licensed company secretarial services in Malaysia',
       lead: 'Professional company secretarial services that keep your company compliant, well governed and accurate on every record, from incorporation to annual filings.',
@@ -100,7 +100,7 @@
       name: 'Business Licensing',
       nav: 'Business Licensing',
       icon: 'badge',
-      image: 'svc-licensing',
+      image: 'sme-owner',
       tag: 'Licences and permits',
       title: 'Business licence applications and renewals in Malaysia',
       lead: 'We identify every licence your business needs, prepare the documents, deal with the authority and follow up until the approval is in your hands.',
@@ -163,7 +163,7 @@
       name: 'Corporate Advisory',
       nav: 'Corporate Advisory',
       icon: 'compass',
-      image: 'svc-advisory',
+      image: 'consult-desk',
       tag: 'Strategy and market entry',
       title: 'Corporate advisory and market entry for Malaysia',
       lead: 'Clear advice on structure, market entry and expansion, so founders and investors make informed decisions before they commit a single ringgit.',
@@ -204,7 +204,7 @@
       name: 'Immigration & Employment Pass',
       nav: 'Immigration & EP',
       icon: 'passport',
-      image: 'svc-immigration',
+      image: 'passport-stamps',
       tag: 'Expatriate and immigration support',
       title: 'Employment Pass and immigration support in Malaysia',
       lead: 'Employer registration, expatriate applications, approvals and renewals for businesses hiring foreign talent and for professionals moving to Malaysia.',
@@ -247,7 +247,7 @@
       name: 'Global Mobility & EOR',
       nav: 'Global Mobility & EOR',
       icon: 'globe',
-      image: 'svc-mobility',
+      image: 'airport-couple',
       tag: 'Workforce and relocation',
       title: 'Global mobility and Employer of Record in Malaysia',
       lead: 'Integrated Global Business Services, global mobility and Employer of Record solutions for companies entering Malaysia, moving people and managing cross-border teams.',
@@ -287,7 +287,7 @@
       name: 'Accounting & Tax',
       nav: 'Accounting & Tax',
       icon: 'calculator',
-      image: 'svc-accounting',
+      image: 'accounts-laptop',
       tag: 'Accounting, payroll and tax',
       title: 'Accounting, payroll and tax compliance in Malaysia',
       lead: 'Organised books, on-time payroll and tax filings that are ready when the authorities ask, for startups, SMEs and foreign-owned companies.',
@@ -328,7 +328,7 @@
       name: 'Buy & Sell Business',
       nav: 'Buy & Sell Business',
       icon: 'handshake',
-      image: 'svc-buysell',
+      image: 'handshake-docs',
       tag: 'Business brokerage',
       title: 'Buying or selling a business in Malaysia',
       lead: 'Business brokerage with valuation, due diligence coordination, risk mitigation and compliant transaction execution, from the first offer to the final SSM filing.',
@@ -469,10 +469,10 @@
   ];
 
   const process = [
-    { id: 'discovery', title: 'Discovery', text: 'We begin by understanding your business, objectives and specific requirements.', image: 'step-discovery' },
-    { id: 'strategy', title: 'Strategy', text: 'We establish a clear roadmap, the documents needed and the right sequence of actions.', image: 'step-strategy' },
-    { id: 'execution', title: 'Execution', text: 'Our team coordinates the applications, documents and processes with the relevant authorities.', image: 'step-execution' },
-    { id: 'support', title: 'Ongoing support', text: 'Once you are established, we keep supporting your business with ongoing compliance and renewals.', image: 'step-support' },
+    { id: 'discovery', title: 'Discovery', text: 'We begin by understanding your business, objectives and specific requirements.', image: 'consult-laptop' },
+    { id: 'strategy', title: 'Strategy', text: 'We establish a clear roadmap, the documents needed and the right sequence of actions.', image: 'plan-board' },
+    { id: 'execution', title: 'Execution', text: 'Our team coordinates the applications, documents and processes with the relevant authorities.', image: 'docs-team-signing' },
+    { id: 'support', title: 'Ongoing support', text: 'Once you are established, we keep supporting your business with ongoing compliance and renewals.', image: 'support-call-asian' },
   ];
 
   const why = [
@@ -493,10 +493,10 @@
   ];
 
   const journeys = [
-    { id: 'founder', title: 'Starting a company in Malaysia', sub: 'For foreign founders and investors', points: ['Sdn Bhd or LLP incorporation with SSM', 'Local nominee director and registered address', 'Corporate bank account facilitation'], service: 'company-secretarial', cta: 'Start my company', image: 'j-founder' },
-    { id: 'sme', title: 'Running a Malaysian business', sub: 'For SMEs and growing companies', points: ['DBKL premise and signboard licences', 'WRT, CIDB, MOF and MOTAC licences', 'Accounting, payroll and tax filing'], service: 'business-licensing', cta: 'Check my licences', image: 'j-sme' },
-    { id: 'hiring', title: 'Hiring foreign talent', sub: 'For employers bringing in expatriates', points: ['ESD registration and JTKSM approval', 'MyFutureJobs posting letters', 'Employment Pass applications and renewals'], service: 'immigration-employment-pass', cta: 'Plan my hire', image: 'j-hiring' },
-    { id: 'moving', title: 'Moving to Malaysia', sub: 'For professionals and their families', points: ['Employment Pass and Dependant Pass', 'Professional Visit Pass and RP-T', 'Relocation support with global mobility'], service: 'global-mobility-eor', cta: 'Plan my move', image: 'j-moving' },
+    { id: 'founder', title: 'Starting a company in Malaysia', sub: 'For foreign founders and investors', points: ['Sdn Bhd or LLP incorporation with SSM', 'Local nominee director and registered address', 'Corporate bank account facilitation'], service: 'company-secretarial', cta: 'Start my company', image: 'kl-founder' },
+    { id: 'sme', title: 'Running a Malaysian business', sub: 'For SMEs and growing companies', points: ['DBKL premise and signboard licences', 'WRT, CIDB, MOF and MOTAC licences', 'Accounting, payroll and tax filing'], service: 'business-licensing', cta: 'Check my licences', image: 'sme-barista' },
+    { id: 'hiring', title: 'Hiring foreign talent', sub: 'For employers bringing in expatriates', points: ['ESD registration and JTKSM approval', 'MyFutureJobs posting letters', 'Employment Pass applications and renewals'], service: 'immigration-employment-pass', cta: 'Plan my hire', image: 'interview-blazer' },
+    { id: 'moving', title: 'Moving to Malaysia', sub: 'For professionals and their families', points: ['Employment Pass and Dependant Pass', 'Professional Visit Pass and RP-T', 'Relocation support with global mobility'], service: 'global-mobility-eor', cta: 'Plan my move', image: 'airport-mother' },
   ];
 
   const compare = [
